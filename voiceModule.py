@@ -14,10 +14,16 @@ class Voice:
     def Listen(self):
         # Use the microphone for audio source
         with self.mic as source:
+            print("Hi")
             # read the audio data from the default microphone
             audio_data = self.rec.listen(source)
             # convert speech to text
-            text = self.rec.recognize_google(audio_data)
+            try:
+                text = self.rec.recognize_google(audio_data)
+                self.rec.recogn
+            except:
+                return ""
             # return the data
+            print("Bye")
             return text
 

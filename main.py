@@ -14,6 +14,7 @@ def Run():
             msg = v.Listen()
             kb.TypeMessage(msg)
 
+
 # Entry point into the program
 if __name__ == "__main__":
     Run()
