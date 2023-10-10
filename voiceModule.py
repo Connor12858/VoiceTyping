@@ -1,6 +1,8 @@
 # Import the libraries needed
 import speech_recognition as sr
 
+import secrets
+
 
 # Define a voice module that will hear the user
 # Listen to the user until a pause and send it back as a string
@@ -19,8 +21,7 @@ class Voice:
             audio_data = self.rec.listen(source)
             # convert speech to text
             try:
-                text = self.rec.recognize_google(audio_data)
-                self.rec.recogn
+                text = self.rec.recognize_google(audio_data, key=secrets.speech_key)
             except:
                 return ""
             # return the data
